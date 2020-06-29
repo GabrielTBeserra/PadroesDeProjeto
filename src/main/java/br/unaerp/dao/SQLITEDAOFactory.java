@@ -3,14 +3,14 @@ package br.unaerp.dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-public class SqliteDAOFactory extends DAOFactory {
+public class SQLITEDAOFactory extends DAOFactory {
 
 
     public static Connection getConnection() {
-        try{
+        try {
             Class.forName("org.sqlite.JDBC");
             return DriverManager.getConnection("jdbc:sqlite:database.db");
-        } catch (Exception e){
+        } catch (Exception e) {
             System.err.println(e.getMessage());
         }
         return null;

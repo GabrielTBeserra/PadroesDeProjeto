@@ -7,15 +7,16 @@ public abstract class DAOFactory {
     public static DAOFactory getDAOFactory(int option) {
         switch (option) {
             case MYSQL:
-                return new MysqlDAOFactory();
+                return new MYSQLDAOFactory();
             case SQLITE:
-                return new SqliteDAOFactory();
+                return new SQLITEDAOFactory();
             default:
                 return null;
         }
     }
 
     public abstract CategoriesDAO getCategoriesDAO();
+
 
     public abstract ProductsDAO getProductsDAO();
 
