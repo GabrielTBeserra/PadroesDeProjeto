@@ -22,7 +22,7 @@ public class SuppliersDapImpleMySql implements SuppliersDAO {
 
     }
 
-    public Suppliers getSuppllier(int id ) throws SQLException {
+    public Suppliers getSuppllier(int id) throws SQLException {
         return null;
     }
 }

@@ -1,11 +1,20 @@
 package br.unaerp.dao;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 
 public class MysqlDAOFactory extends DAOFactory {
-    public static Connection createConnection() {
+    public static Connection getConnection() {
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            return DriverManager.getConnection("jdbc:mysql://localhost:3306/northwind", "root", "");
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }
+
         return null;
     }
+
 
     public CategoriesDAO getCategoriesDAO() {
         return new CategoriesDaoImpleMySql();
