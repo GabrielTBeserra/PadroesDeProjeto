@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 public class Main {
     public static void main(String[] args) throws SQLException {
-        DAOFactory daoFactory = DAOFactory.getDAOFactory(DAOFactory.SQLITE);
+        DAOFactory daoFactory = DAOFactory.getDAOFactory(DAOFactory.MYSQL);
         assert daoFactory != null;
         CategoriesDAO categoriesDAO = daoFactory.getCategoriesDAO();
         categoriesDAO.delete(5);

@@ -20,7 +20,7 @@ public class CategoriesDaoImpleMySql implements CategoriesDAO {
     }
 
     public void delete(int id) throws SQLException {
-
+        System.out.println("mysql " + id);
     }
 
     public Categories show(int id) throws SQLException {

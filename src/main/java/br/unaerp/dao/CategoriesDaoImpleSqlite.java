@@ -20,7 +20,7 @@ public class CategoriesDaoImpleSqlite implements CategoriesDAO {
     }
 
     public void delete(int id) throws SQLException {
-
+        System.out.println("sqlite " + id );
     }
 
     public Categories show(int id) throws SQLException {
