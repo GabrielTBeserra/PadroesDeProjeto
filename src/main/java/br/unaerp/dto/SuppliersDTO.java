@@ -1,6 +1,6 @@
-package br.unaerp.entity;
+package br.unaerp.dto;
 
-public class Suppliers {
+public class SuppliersDTO {
     private int supplierId;
     private String companyName;
     private String contactName;
@@ -15,7 +15,7 @@ public class Suppliers {
     private String homePage;
 
 
-    public Suppliers(int supplierId, String companyName, String contactName, String contactTitle, String address, String city, String region, String postalCode, String country, String phone, String fax, String homePage) {
+    public SuppliersDTO(int supplierId, String companyName, String contactName, String contactTitle, String address, String city, String region, String postalCode, String country, String phone, String fax, String homePage) {
         this.supplierId = supplierId;
         this.companyName = companyName;
         this.contactName = contactName;

@@ -1,5 +1,6 @@
 package br.unaerp.dao;
 
+import br.unaerp.dto.CategoriesDTO;
 import br.unaerp.entity.Categories;
 
 import java.sql.PreparedStatement;
@@ -25,7 +26,7 @@ public class CategoriesDaoImpleMySql implements CategoriesDAO {
         return listaCategoria;
     }
 
-    public void insert(Categories categories) throws SQLException {
+    public void insert(CategoriesDTO categories) throws SQLException {
         String query = "insert into categories (categories_id , category_name , description , piscture) value (? , ? , ? , ?)";
 
         PreparedStatement preparedStatement = MYSQLDAOFactory.getConnection().prepareStatement(query);
@@ -38,7 +39,7 @@ public class CategoriesDaoImpleMySql implements CategoriesDAO {
 
     }
 
-    public void update(Categories categories) throws SQLException {
+    public void update(CategoriesDTO categories) throws SQLException {
         String updateCategoria = "update categories (categories_id = ?, category_name = ?, description = ?, piscture = ?)";
 
         PreparedStatement preparedStatement = MYSQLDAOFactory.getConnection().prepareStatement(updateCategoria);

@@ -1,23 +1,23 @@
-package br.unaerp.entity;
+package br.unaerp.dto;
 
-public class Categories {
+public class CategoriesDTO {
     private int categoryId;
     private String categoryName;
     private String description;
     private String picture;
 
-    public Categories() {
+    public CategoriesDTO() {
     }
 
 
-    public Categories(int categoryId, String categoryName, String description, String picture) {
+    public CategoriesDTO(int categoryId, String categoryName, String description, String picture) {
         this.categoryId = categoryId;
         this.categoryName = categoryName;
         this.description = description;
         this.picture = picture;
     }
 
-    public Categories(String categoryName, String description, String picture) {
+    public CategoriesDTO(String categoryName, String description, String picture) {
         this.categoryName = categoryName;
         this.description = description;
         this.picture = picture;

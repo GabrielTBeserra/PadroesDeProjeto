@@ -1,6 +1,6 @@
-package br.unaerp.entity;
+package br.unaerp.dto;
 
-public class Products {
+public class ProductsDTO {
     private int pruductId;
     private String productName;
     private int supplierId;
@@ -12,10 +12,10 @@ public class Products {
     private int reorderLevel;
     private int discontinued;
 
-    public Products() {
+    public ProductsDTO() {
     }
 
-    public Products(int pruductId, String productName, int supplierId, int categoryId, int quantityPerUnit, double unitPrice, int unitsInStock, int unitsOnOrder, int reorderLevel, int discontinued) {
+    public ProductsDTO(int pruductId, String productName, int supplierId, int categoryId, int quantityPerUnit, double unitPrice, int unitsInStock, int unitsOnOrder, int reorderLevel, int discontinued) {
         this.pruductId = pruductId;
         this.productName = productName;
         this.supplierId = supplierId;

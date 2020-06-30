@@ -1,5 +1,6 @@
 package br.unaerp.dao;
 
+import br.unaerp.dto.ProductsDTO;
 import br.unaerp.entity.Products;
 
 import java.sql.PreparedStatement;
@@ -29,7 +30,7 @@ public class ProductDaoImpleSqlite implements ProductsDAO {
         return products;
     }
 
-    public void update(Products products) throws SQLException {
+    public void update(ProductsDTO products) throws SQLException {
         String query =
                 "update products (product_id = ?, product_name = ?" +
                         ", supplier_id = ?, category_id = ?, quantity_per_unit = ?" +
@@ -52,7 +53,7 @@ public class ProductDaoImpleSqlite implements ProductsDAO {
         preparedStatement.execute();
     }
 
-    public void insert(Products products) throws SQLException {
+    public void insert(ProductsDTO products) throws SQLException {
         String query =
                 "insert into products (product_id , product_name " +
                         ", supplier_id , category_id , quantity_per_unit " +

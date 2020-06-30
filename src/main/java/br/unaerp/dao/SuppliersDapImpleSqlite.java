@@ -1,5 +1,6 @@
 package br.unaerp.dao;
 
+import br.unaerp.dto.SuppliersDTO;
 import br.unaerp.entity.Suppliers;
 
 import java.sql.PreparedStatement;
@@ -38,7 +39,7 @@ public class SuppliersDapImpleSqlite implements SuppliersDAO {
         return suppliers;
     }
 
-    public void insert(Suppliers suppliers) throws SQLException {
+    public void insert(SuppliersDTO suppliers) throws SQLException {
         String query = "insert into suppliers " +
                 "(supplier_id , company_name , contact_name , contact_title " +
                 ", address , city , region , postal_code , country , phone " +
@@ -62,7 +63,7 @@ public class SuppliersDapImpleSqlite implements SuppliersDAO {
         preparedStatement.execute();
     }
 
-    public void update(Suppliers suppliers) throws SQLException {
+    public void update(SuppliersDTO suppliers) throws SQLException {
         String query = "update suppliers " +
                 "(supplier_id = ?, company_name = ? , contact_name = ?, contact_title = ?" +
                 ", address = ?, city = ?, region = ?, postal_code = ?, country = ?, phone = ?" +
