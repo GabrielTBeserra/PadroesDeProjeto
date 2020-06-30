@@ -5,17 +5,17 @@ public class Products {
     private String productName;
     private int supplierId;
     private int categoryId;
-    private String quantityPerUnit;
+    private int quantityPerUnit;
     private double unitPrice;
     private int unitsInStock;
     private int unitsOnOrder;
     private int reorderLevel;
     private int discontinued;
 
-    public Products(){}
+    public Products() {
+    }
 
-
-    public Products(int pruductId, String productName, int supplierId, int categoryId, String quantityPerUnit, double unitPrice, int unitsInStock, int unitsOnOrder, int reorderLevel, int discontinued) {
+    public Products(int pruductId, String productName, int supplierId, int categoryId, int quantityPerUnit, double unitPrice, int unitsInStock, int unitsOnOrder, int reorderLevel, int discontinued) {
         this.pruductId = pruductId;
         this.productName = productName;
         this.supplierId = supplierId;
@@ -60,11 +60,11 @@ public class Products {
         this.categoryId = categoryId;
     }
 
-    public String getQuantityPerUnit() {
+    public int getQuantityPerUnit() {
         return quantityPerUnit;
     }
 
-    public void setQuantityPerUnit(String quantityPerUnit) {
+    public void setQuantityPerUnit(int quantityPerUnit) {
         this.quantityPerUnit = quantityPerUnit;
     }
 
@@ -108,3 +108,5 @@ public class Products {
         this.discontinued = discontinued;
     }
 }
+
+

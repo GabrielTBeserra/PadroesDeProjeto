@@ -10,7 +10,7 @@ public interface ProductsDAO {
 
     void update(Products products) throws SQLException;
 
-    void inset(Products categories) throws SQLException;
+    void insert(Products categories) throws SQLException;
 
     void delete(int id) throws SQLException;
 

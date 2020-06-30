@@ -1,7 +1,7 @@
 package br.unaerp.entity;
 
 public class Suppliers {
-    private int SupplierId;
+    private int supplierId;
     private String companyName;
     private String contactName;
     private String contactTitle;
@@ -14,12 +14,9 @@ public class Suppliers {
     private String fax;
     private String homePage;
 
-    public Suppliers(){
-
-    }
 
     public Suppliers(int supplierId, String companyName, String contactName, String contactTitle, String address, String city, String region, String postalCode, String country, String phone, String fax, String homePage) {
-        SupplierId = supplierId;
+        this.supplierId = supplierId;
         this.companyName = companyName;
         this.contactName = contactName;
         this.contactTitle = contactTitle;
@@ -34,11 +31,11 @@ public class Suppliers {
     }
 
     public int getSupplierId() {
-        return SupplierId;
+        return supplierId;
     }
 
     public void setSupplierId(int supplierId) {
-        SupplierId = supplierId;
+        supplierId = supplierId;
     }
 
     public String getCompanyName() {

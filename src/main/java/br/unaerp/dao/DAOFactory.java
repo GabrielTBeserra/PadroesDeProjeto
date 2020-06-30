@@ -17,7 +17,6 @@ public abstract class DAOFactory {
 
     public abstract CategoriesDAO getCategoriesDAO();
 
-
     public abstract ProductsDAO getProductsDAO();
 
     public abstract SuppliersDAO getSuppliersDAO();
