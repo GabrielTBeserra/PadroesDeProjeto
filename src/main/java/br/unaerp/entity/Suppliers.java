@@ -14,9 +14,26 @@ public class Suppliers {
     private String fax;
     private String homePage;
 
+    public Suppliers(){
+
+    }
 
     public Suppliers(int supplierId, String companyName, String contactName, String contactTitle, String address, String city, String region, String postalCode, String country, String phone, String fax, String homePage) {
         this.supplierId = supplierId;
+        this.companyName = companyName;
+        this.contactName = contactName;
+        this.contactTitle = contactTitle;
+        this.address = address;
+        this.city = city;
+        this.region = region;
+        this.postalCode = postalCode;
+        this.country = country;
+        this.phone = phone;
+        this.fax = fax;
+        this.homePage = homePage;
+    }
+
+    public Suppliers(String companyName, String contactName, String contactTitle, String address, String city, String region, String postalCode, String country, String phone, String fax, String homePage) {
         this.companyName = companyName;
         this.contactName = contactName;
         this.contactTitle = contactTitle;

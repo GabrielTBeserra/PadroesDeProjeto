@@ -28,6 +28,18 @@ public class Products {
         this.discontinued = discontinued;
     }
 
+    public Products(String productName, int supplierId, int categoryId, int quantityPerUnit, double unitPrice, int unitsInStock, int unitsOnOrder, int reorderLevel, int discontinued) {
+        this.productName = productName;
+        this.supplierId = supplierId;
+        this.categoryId = categoryId;
+        this.quantityPerUnit = quantityPerUnit;
+        this.unitPrice = unitPrice;
+        this.unitsInStock = unitsInStock;
+        this.unitsOnOrder = unitsOnOrder;
+        this.reorderLevel = reorderLevel;
+        this.discontinued = discontinued;
+    }
+
     public int getPruductId() {
         return pruductId;
     }
