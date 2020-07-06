@@ -64,24 +64,25 @@ public class SuppliersDapImpleSqlite implements SuppliersDAO {
     }
 
     public void update(SuppliersDTO suppliers) throws SQLException {
-        String query = "update suppliers " +
-                "(supplier_id = ?, company_name = ? , contact_name = ?, contact_title = ?" +
+        String query = "update suppliers set" +
+                "(company_name = ? , contact_name = ?, contact_title = ?" +
                 ", address = ?, city = ?, region = ?, postal_code = ?, country = ?, phone = ?" +
-                ", fax = ?, homepage = ?)";
+                ", fax = ?, homepage = ?) where supplier_id = ?";
 
-        PreparedStatement preparedStatement = SQLITEDAOFactory.getConnection().prepareStatement(query);
-        preparedStatement.setInt(1, suppliers.getSupplierId());
-        preparedStatement.setString(2, suppliers.getCompanyName());
-        preparedStatement.setString(3, suppliers.getContactName());
-        preparedStatement.setString(4, suppliers.getContactTitle());
-        preparedStatement.setString(5, suppliers.getAddress());
-        preparedStatement.setString(6, suppliers.getCity());
-        preparedStatement.setString(7, suppliers.getRegion());
-        preparedStatement.setString(8, suppliers.getPostalCode());
-        preparedStatement.setString(9, suppliers.getCountry());
-        preparedStatement.setString(10, suppliers.getPhone());
-        preparedStatement.setString(11, suppliers.getFax());
-        preparedStatement.setString(12, suppliers.getHomePage());
+        PreparedStatement preparedStatement = MYSQLDAOFactory.getConnection().prepareStatement(query);
+
+        preparedStatement.setString(1, suppliers.getCompanyName());
+        preparedStatement.setString(2, suppliers.getContactName());
+        preparedStatement.setString(3, suppliers.getContactTitle());
+        preparedStatement.setString(4, suppliers.getAddress());
+        preparedStatement.setString(5, suppliers.getCity());
+        preparedStatement.setString(6, suppliers.getRegion());
+        preparedStatement.setString(7, suppliers.getPostalCode());
+        preparedStatement.setString(8, suppliers.getCountry());
+        preparedStatement.setString(9, suppliers.getPhone());
+        preparedStatement.setString(10, suppliers.getFax());
+        preparedStatement.setString(11, suppliers.getHomePage());
+        preparedStatement.setInt(12, suppliers.getSupplierId());
 
 
         preparedStatement.execute();

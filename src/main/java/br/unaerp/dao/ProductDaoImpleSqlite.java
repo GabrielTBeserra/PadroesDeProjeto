@@ -32,22 +32,23 @@ public class ProductDaoImpleSqlite implements ProductsDAO {
 
     public void update(ProductsDTO products) throws SQLException {
         String query =
-                "update products (product_id = ?, product_name = ?" +
+                "update products set(product_name = ?" +
                         ", supplier_id = ?, category_id = ?, quantity_per_unit = ?" +
                         ", unit_price = ?, units_in_stock = ?, units_on_order = ?" +
-                        ", reorder_level = ?, discontinued = ?)";
+                        ", reorder_level = ?, discontinued = ?) where product_id = ?";
 
-        PreparedStatement preparedStatement = SQLITEDAOFactory.getConnection().prepareStatement(query);
-        preparedStatement.setInt(1, products.getPruductId());
-        preparedStatement.setString(2, products.getProductName());
-        preparedStatement.setInt(3, products.getSupplierId());
-        preparedStatement.setInt(4, products.getCategoryId());
-        preparedStatement.setInt(5, products.getQuantityPerUnit());
-        preparedStatement.setDouble(6, products.getUnitPrice());
-        preparedStatement.setInt(7, products.getUnitsInStock());
-        preparedStatement.setInt(8, products.getUnitsOnOrder());
-        preparedStatement.setInt(9, products.getReorderLevel());
-        preparedStatement.setInt(10, products.getDiscontinued());
+        PreparedStatement preparedStatement = MYSQLDAOFactory.getConnection().prepareStatement(query);
+
+        preparedStatement.setString(1, products.getProductName());
+        preparedStatement.setInt(2, products.getSupplierId());
+        preparedStatement.setInt(3, products.getCategoryId());
+        preparedStatement.setInt(4, products.getQuantityPerUnit());
+        preparedStatement.setDouble(5, products.getUnitPrice());
+        preparedStatement.setInt(6, products.getUnitsInStock());
+        preparedStatement.setInt(7, products.getUnitsOnOrder());
+        preparedStatement.setInt(8, products.getReorderLevel());
+        preparedStatement.setInt(9, products.getDiscontinued());
+        preparedStatement.setInt(10, products.getPruductId());
 
 
         preparedStatement.execute();

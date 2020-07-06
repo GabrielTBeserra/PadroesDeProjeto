@@ -40,7 +40,7 @@ public class CategoriesDaoImpleSqlite implements CategoriesDAO {
     }
 
     public void update(CategoriesDTO categories) throws SQLException {
-        String updateCategoria = "update categories (categories_id = ?, category_name = ?, description = ?, piscture = ?)";
+        String updateCategoria = "update categories (categories_id = ?, category_name = ?, description = ?, piscture = ?) where categories_id = ?";
 
         PreparedStatement preparedStatement = SQLITEDAOFactory.getConnection().prepareStatement(updateCategoria);
         preparedStatement.setInt(1, categories.getCategoryId());

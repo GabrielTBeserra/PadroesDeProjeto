@@ -40,13 +40,14 @@ public class CategoriesDaoImpleMySql implements CategoriesDAO {
     }
 
     public void update(CategoriesDTO categories) throws SQLException {
-        String updateCategoria = "update categories (categories_id = ?, category_name = ?, description = ?, piscture = ?)";
+        String updateCategoria = "update categories (categories_id = ?, category_name = ?, description = ?, piscture = ?) where categories_id = ?";
 
         PreparedStatement preparedStatement = MYSQLDAOFactory.getConnection().prepareStatement(updateCategoria);
         preparedStatement.setInt(1, categories.getCategoryId());
         preparedStatement.setString(2, categories.getCategoryName());
         preparedStatement.setString(3, categories.getDescription());
         preparedStatement.setString(4, categories.getPicture());
+        preparedStatement.setInt(5, categories.getCategoryId());
         preparedStatement.execute();
     }
 
